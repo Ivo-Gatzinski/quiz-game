@@ -1,5 +1,8 @@
 .header {
-
+display: flex;
+flex-wrap: nowrap;
+justify-content:space-between;
+padding: 10px;
 }
 
 main {
@@ -10,69 +13,76 @@ main {
 }
 
 section {
-    
+    padding: 5px;
 }
 
 .timer {
-
+font-weight: bold;
 }
 
 .high-scores {
-
+padding: 5px;
 }
 
-.welcome {
+/* .welcome {
 
 
-}
+} */
 
 .welcome-title {
+    font-size: 185%;
 
 }
 
 .start-button {
-
-
+font-size: 125%;
+font-weight: bold;
+padding: 5px;
 }
 
 .question {
-
+padding: 5px;
 }
 
 .prompt-question {
-
+color: black;
+font-size: 150%;
 }
 
 .answer-options {
-
+color: black;
+font-size: 100%;
 }
 
 button {
 background-color: rgb(255, 200, 255, .5);
+margin: 5px;
+padding: 2px;
 }
 
 .right-wrong {
-
+ font-style: italic;
 }
 
 .all-done {
-
+font-weight: bold;
+font-size: 135%;
 }
 
 .your-score {
-
+font-size: bold;
 }
 
 .enter-initials {
-
+padding: 5px;
 
 }
 
 .display-scores {
-
+background-color:rgb(255, 200, 255, .5);
 }
 
 .scores-list {
-
+padding: 5px;
 }
 

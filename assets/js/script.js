@@ -11,15 +11,15 @@ var answerOptions = document.querySelector(".answer-options");
 
 var wrongAnswer = false;
 
-var answerArray = [];
+var answerArray = [3,2,4,1];
 var questionsArray = [
   {
-    question: "",
+    question: "Commonly used data types do NOT include:",
     answers: {
-      1: "",
-      2: "",
-      3: "",
-      4: "",
+      1: "1. strings",
+      2: "2. boolean",
+      3: "3. arrays",
+      4: "4. numbers",
     }
   },
   {
@@ -58,7 +58,7 @@ var initials = [];
 
 function welcomePage() {
   //display all items on welcome page
-}
+};
 
 // - display high scores link in top left corner
 // - display timer in top right corner, showing 0 seconds
@@ -81,7 +81,7 @@ function init() {
   };
   getHighScores();
   welcomePage();
-  
+
 }
 
 //EVENT ON CLICK START BUTTON:
