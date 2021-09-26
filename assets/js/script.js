@@ -34,11 +34,13 @@
 //
 // - IF user clicks button with "C: typeof" - CORRECT -
 // -- then DISPLAY NEW QUESTION and ANSWER-BUTTON set
+// -- HIDE PREVIOUS QUESTION
 // -- then "Correct! under line" shows up under buttons
 // -- Timer keeps counting down
 //
 // - IF user clicks on OTHER button - WRONG - 
 // -- then DISPLAY NEW QUESTION and ANSWER BUTTON set
+// -- HIDE PREVIOUS QUESTION
 // -- then "Wrong! under line" shows up under buttons
 // -- Timer skips 30 seconds down 
 // -- -- and keeps counting down
