@@ -3,7 +3,10 @@
 }
 
 main {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 section {
@@ -45,7 +48,7 @@ section {
 }
 
 button {
-
+background-color: rgb(255, 200, 255, .5);
 }
 
 .right-wrong {

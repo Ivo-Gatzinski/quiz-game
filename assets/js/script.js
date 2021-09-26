@@ -72,9 +72,16 @@ function welcomePage() {
 function init() {
   //gets high scores from local storage
   //updates the high scores in high scores <section>
-  getHighScores();
+  function getHighScores() {
+
+  };
   //displays home page
+  function welcomePage() {
+
+  };
+  getHighScores();
   welcomePage();
+  
 }
 
 //EVENT ON CLICK START BUTTON:
