@@ -9,6 +9,11 @@ var promptQuestion = document.querySelector(".prompt-question");
 var rightWrong = document.querySelector(".right-wrong");
 var answerOptions = document.querySelector(".answer-options");
 
+var button1 = document.querySelector(".button-1")
+var button2 = document.querySelector(".button-2")
+var button3 = document.querySelector(".button-3")
+var button4 = document.querySelector(".button-4")
+
 var wrongAnswer = false;
 
 var answerArray = [3,2,4,1];
@@ -87,6 +92,10 @@ function init() {
 function askQuestion() {
 
     promptQuestion.innerHTML = questionsArray[0].question;
+    button1.innerHTML = questionsArray[0].answers[1];
+    button2.innerHTML = questionsArray[0].answers[2];
+    button3.innerHTML = questionsArray[0].answers[3];
+    button4.innerHTML = questionsArray[0].answers[4];
 
 };
 //
