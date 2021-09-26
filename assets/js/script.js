@@ -61,7 +61,7 @@ function welcomePage() {
 };
 
 // - display high scores link in top left corner
-// - display timer in top right corner, showing 0 seconds
+// - display timer in top right corner, showing 120 seconds
 // - display welcome title
 // - display welcome message
 // - display start button
@@ -76,9 +76,6 @@ function init() {
 
   };
   //displays home page
-  function welcomePage() {
-
-  };
   getHighScores();
   welcomePage();
 
@@ -87,7 +84,7 @@ function init() {
 //EVENT ON CLICK START BUTTON:
 //
 // - Display one question:
-function askQuestion() {}
+function askQuestion() {};
 //
 // - Display question prompt in h2
 // 	- DISPLAY QUESTION: example of a quiz question:
@@ -112,14 +109,14 @@ function askQuestion() {}
 // When user clicks button:
 //
 // - IF user clicks button with "C: typeof" - CORRECT -
-function correct() {}
+function correct() {};
 // -- then DISPLAY NEW QUESTION and ANSWER-BUTTON set
 // -- HIDE PREVIOUS QUESTION
 // -- then "Correct! under line" shows up under buttons
 // -- Timer keeps counting down
 //
 // - IF user clicks on OTHER button - WRONG -
-function wrong() {}
+function wrong() {};
 // -- then DISPLAY NEW QUESTION and ANSWER BUTTON set
 // -- HIDE PREVIOUS QUESTION
 // -- then "Wrong! under line" shows up under buttons
@@ -138,7 +135,7 @@ function wrong() {}
 //reset game
 function resetGame() {
   //resets timer
-  timer = 0;
+  timer = 120;
   //saves scores in local storage
   setScore();
 }
