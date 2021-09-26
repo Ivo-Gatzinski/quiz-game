@@ -24,10 +24,10 @@ font-weight: bold;
 padding: 5px;
 }
 
-/* .welcome {
+.welcome {
 
-
-} */
+text-align: center;
+} 
 
 .welcome-title {
     font-size: 185%;

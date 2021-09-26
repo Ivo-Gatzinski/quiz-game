@@ -1,3 +1,7 @@
+//how do I order the innerHTML = ""; commands 
+//so that welcome page only shows welcome, but then it
+//disappears to show questions?
+
 //What containers do I need?
 
 var timer;
@@ -5,6 +9,8 @@ var timerCount;
 
 var timerElement = document.querySelector(".timer");
 var startButton = document.querySelector(".start-button");
+var welcome = document.querySelector(".welcome");
+var question = document.querySelector(".question");
 var promptQuestion = document.querySelector(".prompt-question");
 var rightWrong = document.querySelector(".right-wrong");
 var answerOptions = document.querySelector(".answer-options");
@@ -66,6 +72,9 @@ var initials = [];
 
 function welcomePage() {
   //display all items on welcome page
+ question.innerHTML = "";
+ allDone.innerHTML = "";
+ displayScores.innerHTML = "";
 };
 
 // - display high scores link in top left corner
@@ -108,6 +117,8 @@ function askQuestion() {
     startButton.innerHTML = "";
     allDone.innerHTML = "";
     displayScores.innerHTML = "";
+    welcome.innerHTML = "";
+    
 
     promptQuestion.innerHTML = questionsArray[0].question;
     button1.innerHTML = questionsArray[0].answers[1];
@@ -195,7 +206,8 @@ function resetGame() {
 // -- display GO BACK and CLEAR HIGH SCORES button
 
 //where exactly to put init() function?
-init();
+
+//init();
 
 // -- IF player clicks GO BACK, then DISPLAY WELCOME PAGE
 startButton.addEventListener("click", askQuestion);
