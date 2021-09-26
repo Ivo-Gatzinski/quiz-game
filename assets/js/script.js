@@ -9,6 +9,8 @@ var promptQuestion = document.querySelector(".prompt-question");
 var rightWrong = document.querySelector(".right-wrong");
 var answerOptions = document.querySelector(".answer-options");
 var goBack = document.querySelector(".go-back");
+var allDone = document.querySelector(".all-done");
+var displayScores = document.querySelector("#display-scores");
 
 var button1 = document.querySelector(".button-1")
 var button2 = document.querySelector(".button-2")
@@ -103,6 +105,9 @@ function startGame() {
 // - Display one question:
 function askQuestion() {
 
+    startButton.innerHTML = "";
+    allDone.innerHTML = "";
+    displayScores.innerHTML = "";
 
     promptQuestion.innerHTML = questionsArray[0].question;
     button1.innerHTML = questionsArray[0].answers[1];
