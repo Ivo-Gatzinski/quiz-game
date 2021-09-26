@@ -1,6 +1,19 @@
+//What containers do I need?
 
+var timer;
+var timerCount;
+
+var timerElement = document.querySelector('.timer');
+var startButton = document.querySelector('.start-button');
+var wrongAnswer = false;
+var questions = [];
+var answers = [];
 
 // EVENT ON LOAD PAGE: Display start page:
+
+function welcomePage() {
+    //display all items on welcome page
+}
 
 // - display high scores link in top left corner
 // - display timer in top right corner, showing 0 seconds
@@ -16,7 +29,7 @@ function init() {
     //updates the high scores in high scores <section>
     getHighScores();
     //displays home page
-    showWelcomePage();
+    welcomePage();
 }
 
 //EVENT ON CLICK START BUTTON: 
