@@ -27,3 +27,34 @@
 // 	- update the time display each second counting down
 //
 // - do NOT display Title, Welcome, Start-Button
+
+//BRANCHES HERE ON CLICK BUTTON 
+//
+// When user clicks button:
+//
+// - IF user clicks button with "C: typeof" - CORRECT -
+// -- then DISPLAY NEW QUESTION and ANSWER-BUTTON set
+// -- then "Correct! under line" shows up under buttons
+// -- Timer keeps counting down
+//
+// - IF user clicks on OTHER button - WRONG - 
+// -- then DISPLAY NEW QUESTION and ANSWER BUTTON set
+// -- then "Wrong! under line" shows up under buttons
+// -- Timer skips 30 seconds down 
+// -- -- and keeps counting down
+//
+// Repeat When User Clicks Button by:
+// -- choose new prompt string from ARRAY of Questions
+// -- choose new answer-buttons (4) from ARRAY of CORRESPONDING answers
+//
+// -- WHEN no more questions left in array of questions:
+//
+// -- show "All Done" Page
+// -- Append YOUR scores into an array of high scores
+// -- Display your scores
+// -- Display INITIALS FORM
+// -- Collect INITIALs and SCORES into Local Storage
+// -- display GO BACK and CLEAR HIGH SCORES button
+// 
+// -- IF player clicks GO BACK, then DISPLAY WELCOME PAGE
+// -- IF player clicks CLEAR SCORES, then erase scores in ARRAY
