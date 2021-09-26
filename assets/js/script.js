@@ -6,7 +6,7 @@
 //What containers do I need?
 
 var timer;
-var timerCount;
+var timerCount = 120;;
 var timerElement = document.querySelector(".timer");
 
 var startButton = document.querySelector(".start-button");
@@ -29,23 +29,26 @@ var button3 = document.querySelector(".button-3")
 var button4 = document.querySelector(".button-4")
 
 function startTimer() {
-    // Sets timer
+    // starts timer
     timer = setInterval(function () {
       timerCount--;
-      timerElement.innerHTML = "Time:" + timerCount;
-    if (timerCount > 0) {
-    clearInterval(timer);
+      timerElement.innerHTML = "Time: " + timerCount;
+    //if (timerCount > 0) {
+    //clearInterval(timer);
     //     winGame();
-    }
+    //}
       // Tests if time has run out
     if (timerCount <= 0) {
        // Clears interval
     clearInterval(timer);
     //      loseGame();
     }
-    }, 120*1000); // 120 seconds
+    }, 1000);
 };
+
+
 var answerArray = [3,4,2,1];
+
 var questionsArray = [
   {
     question: "Commonly used data types do NOT include:",
@@ -145,7 +148,8 @@ function askQuestion() {
     //IF user clicks button, 
     // SHOW correct or wrong, and
     // SHOW NEXT QUESTION
-    // - USE IF?
+    
+    // - USE FOR LOOP?
 
 };
 //
@@ -201,12 +205,6 @@ function wrong() {};
 //
 // -- show "All Done" Page
 // -- Append YOUR scores into an array of high scores
-
-
-function startTimer () {
-    timer;
-    timerCount;
-}
 
 //reset game
 function resetGame() {
