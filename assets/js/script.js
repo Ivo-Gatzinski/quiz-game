@@ -144,7 +144,22 @@ function askQuestion() {
   // SHOW NEXT QUESTION
 
   // - USE FOR LOOP?
+
 }
+
+
+//display Correct!
+
+function displayCorrect() {
+
+    // check to see if correct button was pressed:
+    if (document.target = button3) {
+        promptQuestion.innerHTML = "Correct!";
+    }
+
+}
+
+displayCorrect();
 
 //
 // - Display question prompt in h2
