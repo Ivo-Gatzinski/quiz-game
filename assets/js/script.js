@@ -91,11 +91,17 @@ function init() {
 // - Display one question:
 function askQuestion() {
 
+
     promptQuestion.innerHTML = questionsArray[0].question;
     button1.innerHTML = questionsArray[0].answers[1];
     button2.innerHTML = questionsArray[0].answers[2];
     button3.innerHTML = questionsArray[0].answers[3];
     button4.innerHTML = questionsArray[0].answers[4];
+
+    //IF user clicks button, 
+    // SHOW correct or wrong, and
+    // SHOW NEXT QUESTION
+    // - USE IF?
 
 };
 //
@@ -168,4 +174,6 @@ goBack.addEventListener("click", resetGame);
 
 //where exactly to put init() function?
 init();
-askQuestion();
+
+startButton.addEventListener("click", askQuestion);
+    
