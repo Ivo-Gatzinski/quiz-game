@@ -25,6 +25,23 @@ var button4 = document.querySelector(".button-4")
 
 var wrongAnswer = false;
 
+function startTimer() {
+    // Sets timer
+    timer = setInterval(function () {
+      timerCount--;
+      timerElement.textContent = "Time:" + timerCount;
+    //   if (timerCount > 0) {
+    //     clearInterval(timer);
+    //     winGame();
+    //   }
+      // Tests if time has run out
+      if (timerCount <= 0) {
+        // Clears interval
+        clearInterval(timer);
+        // loseGame();
+      }
+    }, 120*1000); // 120 seconds
+};
 var answerArray = [3,4,2,1];
 var questionsArray = [
   {
@@ -70,12 +87,12 @@ var initials = [];
 
 // EVENT ON LOAD PAGE: Display start page:
 
-function welcomePage() {
-  //display all items on welcome page
- question.innerHTML = "";
- allDone.innerHTML = "";
- displayScores.innerHTML = "";
-};
+// function welcomePage() {
+//   //display all items on welcome page
+//  question.innerHTML = "";
+//  allDone.textContent = "";
+//  displayScores.innerHTML = "";
+// };
 
 // - display high scores link in top left corner
 // - display timer in top right corner, showing 120 seconds
@@ -86,17 +103,17 @@ function welcomePage() {
 //init function is called when page loads
 //to prepare the high scores for display
 //and display the welcome page
-function init() {
-  //gets high scores from local storage
-  //updates the high scores in high scores <section>
-  function getHighScores() {
+// function init() {
+//   //gets high scores from local storage
+//   //updates the high scores in high scores <section>
+//   function getHighScores() {
 
-  };
-  //displays home page
-  getHighScores();
-  welcomePage();
+//   };
+//   //displays home page
+//   getHighScores();
+//   welcomePage();
 
-}
+// }
 
 //EVENT ON CLICK START BUTTON:
 
@@ -108,7 +125,7 @@ function startGame() {
     startButton.disabled = true;
     askQuestion();
     startTimer();
-}
+};
 
 //
 // - Display one question:
@@ -208,13 +225,14 @@ function resetGame() {
 //where exactly to put init() function?
 
 //init();
+//welcomePage();
 
 // -- IF player clicks GO BACK, then DISPLAY WELCOME PAGE
-startButton.addEventListener("click", askQuestion);
+startButton.addEventListener("click", startGame);
 
 // -- IF player clicks go back button, reset game
 goBack.addEventListener("click", resetGame);
 
 // -- IF player clicks CLEAR SCORES, then erase scores in ARRAY
 
-    
+
