@@ -11,7 +11,7 @@ var answerOptions = document.querySelector(".answer-options");
 
 var wrongAnswer = false;
 
-var questions = [ 
+var questionsArray = [ 
     {
         question: "",
         answers: {
