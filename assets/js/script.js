@@ -1,10 +1,23 @@
+
+
 // EVENT ON LOAD PAGE: Display start page:
+
 // - display high scores link in top left corner
 // - display timer in top right corner, showing 0 seconds
 // - display welcome title
 // - display welcome message
 // - display start button
 
+//init function is called when page loads
+//to prepare the high scores for display
+//and display the welcome page
+function init() {
+    //gets high scores from local storage
+    //updates the high scores in high scores <section>
+    getHighScores();
+    //displays home page
+    showWelcomePage();
+}
 
 //EVENT ON CLICK START BUTTON: 
 //
@@ -53,10 +66,27 @@
 //
 // -- show "All Done" Page
 // -- Append YOUR scores into an array of high scores
+ 
+//reset game
+function resetGame() {
+    //resets timer
+    timer = 0;
+    //saves scores in local storage
+    setScore();
+}
+
 // -- Display your scores
 // -- Display INITIALS FORM
 // -- Collect INITIALs and SCORES into Local Storage
 // -- display GO BACK and CLEAR HIGH SCORES button
-// 
+
+//adds reset button variable
+var goBack = document.querySelector('.go-back');
+
 // -- IF player clicks GO BACK, then DISPLAY WELCOME PAGE
+
+goBack.addEventListener('click', resetGame)
 // -- IF player clicks CLEAR SCORES, then erase scores in ARRAY
+
+//where exactly to put init() function?
+init()
