@@ -5,7 +5,7 @@ var timerCount;
 
 var timerElement = document.querySelector(".timer");
 var startButton = document.querySelector(".start-button");
-var question = document.querySelector(".question");
+var promptQuestion = document.querySelector(".prompt-question");
 var rightWrong = document.querySelector(".right-wrong");
 var answerOptions = document.querySelector(".answer-options");
 
@@ -84,7 +84,11 @@ function init() {
 //EVENT ON CLICK START BUTTON:
 //
 // - Display one question:
-function askQuestion() {};
+function askQuestion() {
+
+    promptQuestion.innerHTML = questionsArray[0].question;
+
+};
 //
 // - Display question prompt in h2
 // 	- DISPLAY QUESTION: example of a quiz question:
@@ -155,3 +159,4 @@ goBack.addEventListener("click", resetGame);
 
 //where exactly to put init() function?
 init();
+askQuestion();
