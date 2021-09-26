@@ -88,6 +88,17 @@ function init() {
 }
 
 //EVENT ON CLICK START BUTTON:
+
+
+// start game function
+function startGame() {
+
+    timerCount = 120;
+    startButton.disabled = true;
+    askQuestion();
+    startTimer();
+}
+
 //
 // - Display one question:
 function askQuestion() {
@@ -129,6 +140,13 @@ function askQuestion() {
 // When user clicks button:
 //
 // - IF user clicks button with "C: typeof" - CORRECT -
+
+if (wrongAnswer = true) {
+    wrong();
+} else {
+    correct();
+}
+
 function correct() {};
 // -- then DISPLAY NEW QUESTION and ANSWER-BUTTON set
 // -- HIDE PREVIOUS QUESTION
@@ -151,6 +169,12 @@ function wrong() {};
 //
 // -- show "All Done" Page
 // -- Append YOUR scores into an array of high scores
+
+
+function startTimer () {
+    timer;
+    timerCount;
+}
 
 //reset game
 function resetGame() {
