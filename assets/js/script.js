@@ -3,37 +3,61 @@
 var timer;
 var timerCount;
 
-var timerElement = document.querySelector('.timer');
-var startButton = document.querySelector('.start-button');
+var timerElement = document.querySelector(".timer");
+var startButton = document.querySelector(".start-button");
 var question = document.querySelector(".question");
-var rightWrong = document.querySelector(".right-wrong")
+var rightWrong = document.querySelector(".right-wrong");
 var answerOptions = document.querySelector(".answer-options");
 
 var wrongAnswer = false;
 
-var questionsArray = [ 
-    {
-        question: "",
-        answers: {
-            1: "",
-            2: "",
-            3: "",
-            4: "",
-        },
-        correctAnswer: ""
-        },
-        {},
-        {},
-        {},
+var answerArray = [];
+var questionsArray = [
+  {
+    question: "",
+    answers: {
+      1: "",
+      2: "",
+      3: "",
+      4: "",
+    }
+  },
+  {
+    question: "",
+    answers: {
+      1: "",
+      2: "",
+      3: "",
+      4: "",
+    }
+  },
+  {
+    question: "",
+    answers: {
+      1: "",
+      2: "",
+      3: "",
+      4: "",
+    }
+  },
+  {
+    question: "",
+    answers: {
+      1: "",
+      2: "",
+      3: "",
+      4: "",
+    }
+  },
 ];
 
 var score = 0;
-var initials = []; 
+var initials = [];
 
 // EVENT ON LOAD PAGE: Display start page:
 
 function welcomePage() {
-    //display all items on welcome page
+  //display all items on welcome page
 }
 
 // - display high scores link in top left corner
@@ -46,59 +70,53 @@ function welcomePage() {
 //to prepare the high scores for display
 //and display the welcome page
 function init() {
-    //gets high scores from local storage
-    //updates the high scores in high scores <section>
-    getHighScores();
-    //displays home page
-    welcomePage();
+  //gets high scores from local storage
+  //updates the high scores in high scores <section>
+  getHighScores();
+  //displays home page
+  welcomePage();
 }
 
-//EVENT ON CLICK START BUTTON: 
+//EVENT ON CLICK START BUTTON:
 //
 // - Display one question:
-function askQuestion () {
-
-}
+function askQuestion() {}
 //
 // - Display question prompt in h2
-// 	- DISPLAY QUESTION: example of a quiz question: 
+// 	- DISPLAY QUESTION: example of a quiz question:
 // "What keyword can be used to print a type of a value?"
-// 
+//
 //- show multiple choice answers:
 // - Display list of four (4) buttons with answers on labels
 // 	- display buttons with the following text below the question:
-// 	- A: true 
+// 	- A: true
 // 	- B: string
 // 	- C: typeof
 // 	- D: function
-// 
+//
 //  - timer countdown starts:
 // 	- display "Time: 120" to begin
 // 	- update the time display each second counting down
 //
 // - do NOT display Title, Welcome, Start-Button
 
-//BRANCHES HERE ON CLICK BUTTON 
+//BRANCHES HERE ON CLICK BUTTON
 //
 // When user clicks button:
 //
 // - IF user clicks button with "C: typeof" - CORRECT -
-function correct() {
-
-}
+function correct() {}
 // -- then DISPLAY NEW QUESTION and ANSWER-BUTTON set
 // -- HIDE PREVIOUS QUESTION
 // -- then "Correct! under line" shows up under buttons
 // -- Timer keeps counting down
 //
-// - IF user clicks on OTHER button - WRONG - 
-function wrong() {
-
-}
+// - IF user clicks on OTHER button - WRONG -
+function wrong() {}
 // -- then DISPLAY NEW QUESTION and ANSWER BUTTON set
 // -- HIDE PREVIOUS QUESTION
 // -- then "Wrong! under line" shows up under buttons
-// -- Timer skips 30 seconds down 
+// -- Timer skips 30 seconds down
 // -- -- and keeps counting down
 //
 // Repeat When User Clicks Button by:
@@ -109,13 +127,13 @@ function wrong() {
 //
 // -- show "All Done" Page
 // -- Append YOUR scores into an array of high scores
- 
+
 //reset game
 function resetGame() {
-    //resets timer
-    timer = 0;
-    //saves scores in local storage
-    setScore();
+  //resets timer
+  timer = 0;
+  //saves scores in local storage
+  setScore();
 }
 
 // -- Display your scores
@@ -124,12 +142,12 @@ function resetGame() {
 // -- display GO BACK and CLEAR HIGH SCORES button
 
 //adds reset button variable
-var goBack = document.querySelector('.go-back');
+var goBack = document.querySelector(".go-back");
 
 // -- IF player clicks GO BACK, then DISPLAY WELCOME PAGE
 
-goBack.addEventListener('click', resetGame)
+goBack.addEventListener("click", resetGame);
 // -- IF player clicks CLEAR SCORES, then erase scores in ARRAY
 
 //where exactly to put init() function?
-init()
+init();
