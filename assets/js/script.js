@@ -25,7 +25,7 @@ var button4 = document.querySelector(".button-4")
 
 var wrongAnswer = false;
 
-var answerArray = [3,2,4,1];
+var answerArray = [3,4,2,1];
 var questionsArray = [
   {
     question: "Commonly used data types do NOT include:",
@@ -37,30 +37,30 @@ var questionsArray = [
     }
   },
   {
-    question: "",
+    question: "Arrays in JavaScript can be used to store:",
     answers: {
-      1: "",
-      2: "",
-      3: "",
-      4: "",
+      1: "1. objects",
+      2: "2. strings",
+      3: "3. numbers",
+      4: "4. all of the above",
     }
   },
   {
-    question: "",
+    question: "The condition in an if/else statement is enclosed with:",
     answers: {
-      1: "",
-      2: "",
-      3: "",
-      4: "",
+      1: "1. curly braces",
+      2: "2. parentheses",
+      3: "3. square brackets",
+      4: "4. quotation marks",
     }
   },
   {
-    question: "",
+    question: "Which characters define an array:",
     answers: {
-      1: "",
-      2: "",
-      3: "",
-      4: "",
+      1: "1. square brackets",
+      2: "2. parentheses",
+      3: "3. curly braces",
+      4: "4. quotation marks",
     }
   },
 ];
