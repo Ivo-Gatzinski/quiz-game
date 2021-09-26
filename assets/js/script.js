@@ -1,21 +1,26 @@
 //how do I order the innerHTML = ""; commands 
 //so that welcome page only shows welcome, but then it
 //disappears to show questions?
+//How do I RE-display hidden content? hidden HTML?
 
 //What containers do I need?
 
 var timer;
 var timerCount;
-
 var timerElement = document.querySelector(".timer");
+
 var startButton = document.querySelector(".start-button");
 var welcome = document.querySelector(".welcome");
+
 var question = document.querySelector(".question");
 var promptQuestion = document.querySelector(".prompt-question");
 var rightWrong = document.querySelector(".right-wrong");
 var answerOptions = document.querySelector(".answer-options");
+var wrongAnswer = false;
+
 var goBack = document.querySelector(".go-back");
 var allDone = document.querySelector(".all-done");
+
 var displayScores = document.querySelector("#display-scores");
 
 var button1 = document.querySelector(".button-1")
@@ -23,23 +28,21 @@ var button2 = document.querySelector(".button-2")
 var button3 = document.querySelector(".button-3")
 var button4 = document.querySelector(".button-4")
 
-var wrongAnswer = false;
-
 function startTimer() {
     // Sets timer
     timer = setInterval(function () {
       timerCount--;
       timerElement.innerHTML = "Time:" + timerCount;
-    //   if (timerCount > 0) {
-    //     clearInterval(timer);
+    if (timerCount > 0) {
+    clearInterval(timer);
     //     winGame();
-    //   }
+    }
       // Tests if time has run out
-      if (timerCount <= 0) {
-        // Clears interval
-        clearInterval(timer);
-        // loseGame();
-      }
+    if (timerCount <= 0) {
+       // Clears interval
+    clearInterval(timer);
+    //      loseGame();
+    }
     }, 120*1000); // 120 seconds
 };
 var answerArray = [3,4,2,1];
