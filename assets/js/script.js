@@ -29,7 +29,7 @@ function startTimer() {
     // Sets timer
     timer = setInterval(function () {
       timerCount--;
-      timerElement.textContent = "Time:" + timerCount;
+      timerElement.innerHTML = "Time:" + timerCount;
     //   if (timerCount > 0) {
     //     clearInterval(timer);
     //     winGame();
@@ -115,12 +115,8 @@ var initials = [];
 
 // }
 
-//EVENT ON CLICK START BUTTON:
-
-
 // start game function
 function startGame() {
-
     timerCount = 120;
     startButton.disabled = true;
     askQuestion();
@@ -227,10 +223,14 @@ function resetGame() {
 //init();
 //welcomePage();
 
-// -- IF player clicks GO BACK, then DISPLAY WELCOME PAGE
+//EVENT ON CLICK START BUTTON:
+
 startButton.addEventListener("click", startGame);
 
 // -- IF player clicks go back button, reset game
+
+// -- IF player clicks GO BACK, then DISPLAY WELCOME PAGE
+
 goBack.addEventListener("click", resetGame);
 
 // -- IF player clicks CLEAR SCORES, then erase scores in ARRAY
