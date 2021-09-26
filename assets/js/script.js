@@ -1,4 +1,4 @@
-//how do I order the innerHTML = ""; commands 
+//how do I order the innerHTML = ""; commands
 //so that welcome page only shows welcome, but then it
 //disappears to show questions?
 //How do I RE-display hidden content? hidden HTML?
@@ -6,7 +6,7 @@
 //What containers do I need?
 
 var timer;
-var timerCount = 120;;
+var timerCount = 120;
 var timerElement = document.querySelector(".timer");
 
 var startButton = document.querySelector(".start-button");
@@ -23,31 +23,12 @@ var allDone = document.querySelector(".all-done");
 
 var displayScores = document.querySelector("#display-scores");
 
-var button1 = document.querySelector(".button-1")
-var button2 = document.querySelector(".button-2")
-var button3 = document.querySelector(".button-3")
-var button4 = document.querySelector(".button-4")
+var button1 = document.querySelector(".button-1");
+var button2 = document.querySelector(".button-2");
+var button3 = document.querySelector(".button-3");
+var button4 = document.querySelector(".button-4");
 
-function startTimer() {
-    // starts timer
-    timer = setInterval(function () {
-      timerCount--;
-      timerElement.innerHTML = "Time: " + timerCount;
-    //if (timerCount > 0) {
-    //clearInterval(timer);
-    //     winGame();
-    //}
-      // Tests if time has run out
-    if (timerCount <= 0) {
-       // Clears interval
-    clearInterval(timer);
-    //      loseGame();
-    }
-    }, 1000);
-};
-
-
-var answerArray = [3,4,2,1];
+var answerArray = [3, 4, 2, 1];
 
 var questionsArray = [
   {
@@ -57,7 +38,7 @@ var questionsArray = [
       2: "2. boolean",
       3: "3. arrays",
       4: "4. numbers",
-    }
+    },
   },
   {
     question: "Arrays in JavaScript can be used to store:",
@@ -66,7 +47,7 @@ var questionsArray = [
       2: "2. strings",
       3: "3. numbers",
       4: "4. all of the above",
-    }
+    },
   },
   {
     question: "The condition in an if/else statement is enclosed with:",
@@ -75,7 +56,7 @@ var questionsArray = [
       2: "2. parentheses",
       3: "3. square brackets",
       4: "4. quotation marks",
-    }
+    },
   },
   {
     question: "Which characters define an array:",
@@ -84,12 +65,26 @@ var questionsArray = [
       2: "2. parentheses",
       3: "3. curly braces",
       4: "4. quotation marks",
-    }
+    },
   },
 ];
 
 var score = 0;
 var initials = [];
+
+function startTimer() {
+    // starts timer
+    timer = setInterval(function () {
+      timerCount--;
+      timerElement.innerHTML = "Time: " + timerCount;
+      // Tests if time has run out
+      if (timerCount <= 0) {
+        // Clears interval
+        clearInterval(timer);
+      }
+    }, 1000);
+  }
+  
 
 // EVENT ON LOAD PAGE: Display start page:
 
@@ -123,35 +118,34 @@ var initials = [];
 
 // start game function
 function startGame() {
-    timerCount = 120;
-    startButton.disabled = true;
-    askQuestion();
-    startTimer();
-};
+  timerCount = 120;
+  startButton.disabled = true;
+  askQuestion();
+  startTimer();
+}
 
 //
 // - Display one question:
 function askQuestion() {
+  startButton.innerHTML = "";
+  allDone.innerHTML = "";
+  displayScores.innerHTML = "";
+  welcome.innerHTML = "";
 
-    startButton.innerHTML = "";
-    allDone.innerHTML = "";
-    displayScores.innerHTML = "";
-    welcome.innerHTML = "";
-    
+  promptQuestion.innerHTML = questionsArray[0].question;
 
-    promptQuestion.innerHTML = questionsArray[0].question;
-    button1.innerHTML = questionsArray[0].answers[1];
-    button2.innerHTML = questionsArray[0].answers[2];
-    button3.innerHTML = questionsArray[0].answers[3];
-    button4.innerHTML = questionsArray[0].answers[4];
+  button1.innerHTML = questionsArray[0].answers[1];
+  button2.innerHTML = questionsArray[0].answers[2];
+  button3.innerHTML = questionsArray[0].answers[3];
+  button4.innerHTML = questionsArray[0].answers[4];
+  
+  //IF user clicks button,
+  // SHOW correct or wrong, and
+  // SHOW NEXT QUESTION
 
-    //IF user clicks button, 
-    // SHOW correct or wrong, and
-    // SHOW NEXT QUESTION
-    
-    // - USE FOR LOOP?
+  // - USE FOR LOOP?
+}
 
-};
 //
 // - Display question prompt in h2
 // 	- DISPLAY QUESTION: example of a quiz question:
@@ -177,20 +171,20 @@ function askQuestion() {
 //
 // - IF user clicks button with "C: typeof" - CORRECT -
 
-if (wrongAnswer = true) {
-    wrong();
+if ((wrongAnswer = true)) {
+  wrong();
 } else {
-    correct();
+  correct();
 }
 
-function correct() {};
+function correct() {}
 // -- then DISPLAY NEW QUESTION and ANSWER-BUTTON set
 // -- HIDE PREVIOUS QUESTION
 // -- then "Correct! under line" shows up under buttons
 // -- Timer keeps counting down
 //
 // - IF user clicks on OTHER button - WRONG -
-function wrong() {};
+function wrong() {}
 // -- then DISPLAY NEW QUESTION and ANSWER BUTTON set
 // -- HIDE PREVIOUS QUESTION
 // -- then "Wrong! under line" shows up under buttons
@@ -211,7 +205,8 @@ function resetGame() {
   //resets timer
   timer = 120;
   //saves scores in local storage
-  setScore();
+  //setScore();
+  location.reload();
 }
 
 // -- Display your scores
@@ -235,5 +230,3 @@ startButton.addEventListener("click", startGame);
 goBack.addEventListener("click", resetGame);
 
 // -- IF player clicks CLEAR SCORES, then erase scores in ARRAY
-
-
