@@ -8,6 +8,7 @@ var startButton = document.querySelector(".start-button");
 var promptQuestion = document.querySelector(".prompt-question");
 var rightWrong = document.querySelector(".right-wrong");
 var answerOptions = document.querySelector(".answer-options");
+var goBack = document.querySelector(".go-back");
 
 var button1 = document.querySelector(".button-1")
 var button2 = document.querySelector(".button-2")
@@ -164,16 +165,15 @@ function resetGame() {
 // -- Collect INITIALs and SCORES into Local Storage
 // -- display GO BACK and CLEAR HIGH SCORES button
 
-//adds reset button variable
-var goBack = document.querySelector(".go-back");
-
-// -- IF player clicks GO BACK, then DISPLAY WELCOME PAGE
-
-goBack.addEventListener("click", resetGame);
-// -- IF player clicks CLEAR SCORES, then erase scores in ARRAY
-
 //where exactly to put init() function?
 init();
 
+// -- IF player clicks GO BACK, then DISPLAY WELCOME PAGE
 startButton.addEventListener("click", askQuestion);
+
+// -- IF player clicks go back button, reset game
+goBack.addEventListener("click", resetGame);
+
+// -- IF player clicks CLEAR SCORES, then erase scores in ARRAY
+
     
