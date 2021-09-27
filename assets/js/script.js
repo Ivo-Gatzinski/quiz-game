@@ -186,10 +186,12 @@ function displayWrong() {
 //HOW TO LOOP ARRAY ITEMS IN FUNCTION
 
 // check to see if correct button was pressed:
-correctAnswer.addEventListener("click", displayCorrect);
+button3.addEventListener("click", displayCorrect);
 
 //check to see if wrong button was pressed:
-answerOptions.addEventListener("click", displayWrong);
+button1.addEventListener("click", displayWrong);
+button2.addEventListener("click", displayWrong);
+button4.addEventListener("click", displayWrong);
 
 //
 // - Display question prompt in h2
