@@ -28,7 +28,7 @@ var button2 = document.querySelector(".button-2");
 var button3 = document.querySelector(".button-3");
 var button4 = document.querySelector(".button-4");
 
-var answerArray = [3, 4, 2, 1];
+var answerArray = [button3, button4, button2, button1];
 
 var questionsArray = [
   {
@@ -151,15 +151,17 @@ function askQuestion() {
 //display Correct!
 
 function displayCorrect() {
-
     // check to see if correct button was pressed:
     if (document.target = button3) {
-        promptQuestion.innerHTML = "Correct!";
+        rightWrong.innerHTML = "Correct!";
+    } else {
+        rightWrong.innerHTML = "Wrong!";
     }
 
 }
 
-displayCorrect();
+answerOptions.addEventListener("click", displayCorrect);
+
 
 //
 // - Display question prompt in h2
