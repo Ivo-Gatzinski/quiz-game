@@ -27,51 +27,45 @@ var button2 = document.querySelector(".button-2");
 var button3 = document.querySelector(".button-3");
 var button4 = document.querySelector(".button-4");
 
-var correctAnswer;
-
-var answerArray = [button3, button4, button2, button1];
-
-var questionsArray = [
-  {
-    question: "Commonly used data types do NOT include:",
-    answers: {
-      1: "1. strings",
-      2: "2. boolean",
-      3: "3. arrays",
-      4: "4. numbers",
-    },
-  },
-  {
-    question: "Arrays in JavaScript can be used to store:",
-    answers: {
-      1: "1. objects",
-      2: "2. strings",
-      3: "3. numbers",
-      4: "4. all of the above",
-    },
-  },
-  {
-    question: "The condition in an if/else statement is enclosed with:",
-    answers: {
-      1: "1. curly braces",
-      2: "2. parentheses",
-      3: "3. square brackets",
-      4: "4. quotation marks",
-    },
-  },
-  {
-    question: "Which characters define an array:",
-    answers: {
-      1: "1. square brackets",
-      2: "2. parentheses",
-      3: "3. curly braces",
-      4: "4. quotation marks",
-    },
-  },
-];
-
 var score = 0;
 var initials = [];
+
+//DO ARRAYS NOT OBJECTS
+
+//USE <OL> to add numbers
+
+var questionsArray = [ 
+"Commonly used data types do NOT include:", 
+"Arrays in JavaScript can be used to store:", 
+"The condition in an if/else statement is enclosed with:"
+];
+
+var answersArray = [
+[ 
+"strings",
+"boolean",
+"arrays",
+"numbers"
+],
+[
+"objects",
+"strings",
+"numbers",
+"all of the above"
+],
+[
+"curly braces",
+"parentheses",
+"square brackets",
+"quotation marks"
+]
+];
+
+var correctArray = [
+    "arrays",
+    "all of the above",
+    "parentheses"
+]
 
 function startTimer() {
     // starts timer
@@ -135,16 +129,30 @@ function oneQuestion() {
   displayScores.innerHTML = "";
   welcome.innerHTML = "";
 
-  promptQuestion.innerHTML = questionsArray[0].question;
+  promptQuestion.innerHTML = questionsArray[0];
 
-  button1.innerHTML = questionsArray[0].answers[1];
-  button2.innerHTML = questionsArray[0].answers[2];
-  button3.innerHTML = questionsArray[0].answers[3];
-  button4.innerHTML = questionsArray[0].answers[4];
+  button1.innerHTML = answersArray[0][0];
+  button2.innerHTML = answersArray[0][1];
+  button3.innerHTML = answersArray[0][2];
+  button4.innerHTML = answersArray[0][3];
 
-  correctAnswer = answerArray[0];
+  correctAnswer = correctArray[0];
   
 }
+
+answerOptions.addEventListener("click", function(event) {
+
+   if (event.target.textContent === correctAnswer) {
+       twoQuestion();
+       displayCorrect();
+   }  else { twoQuestion();
+   displayWrong();
+   }
+
+}
+);
+
+//USE DISPLAY: NONE INSTEAD
 
 function twoQuestion() {
     startButton.innerHTML = "";
@@ -152,16 +160,38 @@ function twoQuestion() {
     displayScores.innerHTML = "";
     welcome.innerHTML = "";
   
-    promptQuestion.innerHTML = questionsArray[1].question;
+    promptQuestion.innerHTML = questionsArray[1];
   
-    button1.innerHTML = questionsArray[1].answers[1];
-    button2.innerHTML = questionsArray[1].answers[2];
-    button3.innerHTML = questionsArray[1].answers[3];
-    button4.innerHTML = questionsArray[1].answers[4];
+    button1.innerHTML = answersArray[1][0];
+    button2.innerHTML = answersArray[1][1];
+    button3.innerHTML = answersArray[1][2];
+    button4.innerHTML = answersArray[1][3];
 
-    correctAnswer = answerArray[1];
+    correctAnswer = correctArray[1];
     
   }
+
+  function threeQuestion() {
+    startButton.innerHTML = "";
+    allDone.innerHTML = "";
+    displayScores.innerHTML = "";
+    welcome.innerHTML = "";
+  
+    promptQuestion.innerHTML = questionsArray[2];
+  
+    button1.innerHTML = answersArray[2][0];
+    button2.innerHTML = answersArray[2][1];
+    button3.innerHTML = answersArray[2][2];
+    button4.innerHTML = answersArray[2][3];
+
+    correctAnswer = correctArray[2];
+
+    
+    
+  }
+
+// COMPARE CLICKED STRING TO CORRECT STRING:
+
 
 //IF user clicks button,
   // SHOW correct or wrong, and
@@ -172,13 +202,11 @@ function twoQuestion() {
 
 function displayCorrect() {
     rightWrong.innerHTML ="<br><hr><br>Correct!";
-    twoQuestion();
 
 }
 
 function displayWrong() {
     rightWrong.innerHTML = "<br><hr><br>Wrong!";
-    twoQuestion();
 }
 
 //HOW TO SELECT DIFFERENT CORRECT ANSWERS FOR EACH QUESTION?
