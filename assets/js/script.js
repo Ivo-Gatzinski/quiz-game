@@ -119,7 +119,7 @@ function startTimer() {
 function startGame() {
   timerCount = 120;
   startButton.disabled = true;
-  askQuestion();
+  oneQuestion();
   startTimer();
 }
 
@@ -127,7 +127,7 @@ function startGame() {
 // - Display one question:
 // - USE FOR LOOP for next questions?
 
-function askQuestion() {
+function oneQuestion() {
   startButton.innerHTML = "";
   allDone.innerHTML = "";
   displayScores.innerHTML = "";
@@ -142,6 +142,21 @@ function askQuestion() {
   
 }
 
+function twoQuestion() {
+    startButton.innerHTML = "";
+    allDone.innerHTML = "";
+    displayScores.innerHTML = "";
+    welcome.innerHTML = "";
+  
+    promptQuestion.innerHTML = questionsArray[1].question;
+  
+    button1.innerHTML = questionsArray[1].answers[1];
+    button2.innerHTML = questionsArray[1].answers[2];
+    button3.innerHTML = questionsArray[1].answers[3];
+    button4.innerHTML = questionsArray[1].answers[4];
+    
+  }
+
 //IF user clicks button,
   // SHOW correct or wrong, and
 
@@ -151,12 +166,17 @@ function askQuestion() {
 
 function displayCorrect() {
     rightWrong.innerHTML ="<br><hr><br>Correct!";
+    twoQuestion();
 
 }
 
 function displayWrong() {
     rightWrong.innerHTML = "<br><hr><br>Wrong!";
+    twoQuestion();
 }
+
+//HOW TO SELECT DIFFERENT CORRECT ANSWERS FOR EACH QUESTION?
+//HOW TO TAKE FROM CORRECT ANSWERS ARRAY AND PUT INTO FUNCTION?
 
 // check to see if correct button was pressed:
 button3.addEventListener("click", displayCorrect);
