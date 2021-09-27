@@ -162,9 +162,9 @@ function displayWrong() {
 button3.addEventListener("click", displayCorrect);
 
 //check to see if wrong button was pressed:
-button1.addEventListener("Click", displayWrong);
-button2.addEventListener("Click", displayWrong);
-button4.addEventListener("Click", displayWrong);
+button1.addEventListener("click", displayWrong);
+button2.addEventListener("click", displayWrong);
+button4.addEventListener("click", displayWrong);
 
 //
 // - Display question prompt in h2
