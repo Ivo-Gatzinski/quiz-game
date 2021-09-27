@@ -177,6 +177,7 @@ function displayWrong() {
 
 //HOW TO SELECT DIFFERENT CORRECT ANSWERS FOR EACH QUESTION?
 //HOW TO TAKE FROM CORRECT ANSWERS ARRAY AND PUT INTO FUNCTION?
+//HOW TO LOOP ARRAY ITEMS IN FUNCTION
 
 // check to see if correct button was pressed:
 button3.addEventListener("click", displayCorrect);
