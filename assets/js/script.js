@@ -27,6 +27,8 @@ var button2 = document.querySelector(".button-2");
 var button3 = document.querySelector(".button-3");
 var button4 = document.querySelector(".button-4");
 
+var correctAnswer = button3;
+
 var answerArray = [button3, button4, button2, button1];
 
 var questionsArray = [
@@ -139,6 +141,8 @@ function oneQuestion() {
   button2.innerHTML = questionsArray[0].answers[2];
   button3.innerHTML = questionsArray[0].answers[3];
   button4.innerHTML = questionsArray[0].answers[4];
+
+  correctAnswer = answerArray[0];
   
 }
 
@@ -154,6 +158,8 @@ function twoQuestion() {
     button2.innerHTML = questionsArray[1].answers[2];
     button3.innerHTML = questionsArray[1].answers[3];
     button4.innerHTML = questionsArray[1].answers[4];
+
+    correctAnswer = answerArray[1];
     
   }
 
@@ -180,12 +186,10 @@ function displayWrong() {
 //HOW TO LOOP ARRAY ITEMS IN FUNCTION
 
 // check to see if correct button was pressed:
-button3.addEventListener("click", displayCorrect);
+correctAnswer.addEventListener("click", displayCorrect);
 
 //check to see if wrong button was pressed:
-button1.addEventListener("click", displayWrong);
-button2.addEventListener("click", displayWrong);
-button4.addEventListener("click", displayWrong);
+answerOptions.addEventListener("click", displayWrong);
 
 //
 // - Display question prompt in h2
