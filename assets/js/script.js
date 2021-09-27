@@ -27,7 +27,7 @@ var button2 = document.querySelector(".button-2");
 var button3 = document.querySelector(".button-3");
 var button4 = document.querySelector(".button-4");
 
-var correctAnswer = button3;
+var correctAnswer;
 
 var answerArray = [button3, button4, button2, button1];
 
