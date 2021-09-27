@@ -150,12 +150,12 @@ function askQuestion() {
 //display Correct! or Wrong! functions
 
 function displayCorrect() {
-    rightWrong.innerHTML = "Correct!";
+    rightWrong.innerHTML ="<br><hr><br>Correct!";
 
 }
 
 function displayWrong() {
-    rightWrong.innerHTML = "Wrong!";
+    rightWrong.innerHTML = "<br><hr><br>Wrong!";
 }
 
 // check to see if correct button was pressed:
