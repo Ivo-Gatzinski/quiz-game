@@ -16,7 +16,6 @@ var question = document.querySelector(".question");
 var promptQuestion = document.querySelector(".prompt-question");
 var rightWrong = document.querySelector(".right-wrong");
 var answerOptions = document.querySelector(".answer-options");
-var wrongAnswer = false;
 
 var goBack = document.querySelector(".go-back");
 var allDone = document.querySelector(".all-done");
@@ -148,20 +147,24 @@ function askQuestion() {
 }
 
 
-//display Correct!
+//display Correct! or Wrong! functions
 
 function displayCorrect() {
-    // check to see if correct button was pressed:
-    if (document.target = button3) {
-        rightWrong.innerHTML = "Correct!";
-    } else {
-        rightWrong.innerHTML = "Wrong!";
-    }
+    rightWrong.innerHTML = "Correct!";
 
 }
 
-answerOptions.addEventListener("click", displayCorrect);
+function displayWrong() {
+    rightWrong.innerHTML = "Wrong!";
+}
 
+// check to see if correct button was pressed:
+button3.addEventListener("click", displayCorrect);
+
+//check to see if wrong button was pressed:
+button1.addEventListener("Click", displayWrong);
+button2.addEventListener("Click", displayWrong);
+button4.addEventListener("Click", displayWrong);
 
 //
 // - Display question prompt in h2
