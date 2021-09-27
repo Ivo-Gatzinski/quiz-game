@@ -125,7 +125,7 @@ function startGame() {
 
 //
 // - Display one question:
-// - USE FOR LOOP?
+// - USE FOR LOOP for next questions?
 
 function askQuestion() {
   startButton.innerHTML = "";
@@ -140,10 +140,10 @@ function askQuestion() {
   button3.innerHTML = questionsArray[0].answers[3];
   button4.innerHTML = questionsArray[0].answers[4];
   
-  //IF user clicks button,
-  // SHOW correct or wrong, and
-  
 }
+
+//IF user clicks button,
+  // SHOW correct or wrong, and
 
 // SHOW NEXT QUESTION
 
