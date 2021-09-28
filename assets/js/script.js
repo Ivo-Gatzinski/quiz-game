@@ -193,22 +193,22 @@ function threeQuestion() {
   questionCounter = questionCounter++;
 }
 
-// COMPARE CLICKED STRING TO CORRECT STRING:
-
 //IF user clicks button,
 // SHOW correct or wrong, and
 
 // SHOW NEXT QUESTION
 
 function showQuestion() {
-  if ((questionCounter = 0)) {
+  if (questionCounter = 0) {
     oneQuestion();
-  } else if ((questionCounter = 1)) {
+  } else if (questionCounter = 1) {
     twoQuestion();
-  } else if ((questionCounter = 2)) {
+  } else if (questionCounter = 2) {
     threeQuestion();
   }
 }
+
+// COMPARE CLICKED STRING TO CORRECT STRING:
 
 answerOptions.addEventListener("click", function (event) {
   if (event.target.textContent === correctAnswer) {
