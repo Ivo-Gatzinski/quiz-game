@@ -5,6 +5,10 @@
 
 //What containers do I need?
 
+var questionDisplay = 0;
+
+
+
 var timer;
 var timerCount = 120;
 var timerElement = document.querySelector(".timer");
@@ -34,52 +38,32 @@ var initials = [];
 
 //USE <OL> to add numbers
 
-var questionsArray = [ 
-"Commonly used data types do NOT include:", 
-"Arrays in JavaScript can be used to store:", 
-"The condition in an if/else statement is enclosed with:"
+var questionsArray = [
+  "Commonly used data types do NOT include:",
+  "Arrays in JavaScript can be used to store:",
+  "The condition in an if/else statement is enclosed with:",
 ];
 
 var answersArray = [
-[ 
-"strings",
-"boolean",
-"arrays",
-"numbers"
-],
-[
-"objects",
-"strings",
-"numbers",
-"all of the above"
-],
-[
-"curly braces",
-"parentheses",
-"square brackets",
-"quotation marks"
-]
+  ["strings", "boolean", "arrays", "numbers"],
+  ["objects", "strings", "numbers", "all of the above"],
+  ["curly braces", "parentheses", "square brackets", "quotation marks"],
 ];
 
-var correctArray = [
-    "arrays",
-    "all of the above",
-    "parentheses"
-]
+var correctArray = ["arrays", "all of the above", "parentheses"];
 
 function startTimer() {
-    // starts timer
-    timer = setInterval(function () {
-      timerCount--;
-      timerElement.innerHTML = "Time: " + timerCount;
-      // Tests if time has run out
-      if (timerCount <= 0) {
-        // Clears interval
-        clearInterval(timer);
-      }
-    }, 1000);
-  }
-  
+  // starts timer
+  timer = setInterval(function () {
+    timerCount--;
+    timerElement.innerHTML = "Time: " + timerCount;
+    // Tests if time has run out
+    if (timerCount <= 0) {
+      // Clears interval
+      clearInterval(timer);
+    }
+  }, 1000);
+}
 
 // EVENT ON LOAD PAGE: Display start page:
 
@@ -137,89 +121,105 @@ function oneQuestion() {
   button4.innerHTML = answersArray[0][3];
 
   correctAnswer = correctArray[0];
-  
 }
 
-answerOptions.addEventListener("click", function(event) {
-
-   if (event.target.textContent === correctAnswer) {
-       twoQuestion();
-       displayCorrect();
-   }  else { twoQuestion();
-   displayWrong();
-   }
-
-}
-);
-
-//USE DISPLAY: NONE INSTEAD
-
-function twoQuestion() {
-    startButton.innerHTML = "";
-    allDone.innerHTML = "";
-    displayScores.innerHTML = "";
-    welcome.innerHTML = "";
-  
-    promptQuestion.innerHTML = questionsArray[1];
-  
-    button1.innerHTML = answersArray[1][0];
-    button2.innerHTML = answersArray[1][1];
-    button3.innerHTML = answersArray[1][2];
-    button4.innerHTML = answersArray[1][3];
-
-    correctAnswer = correctArray[1];
-    
-  }
-
-  function threeQuestion() {
-    startButton.innerHTML = "";
-    allDone.innerHTML = "";
-    displayScores.innerHTML = "";
-    welcome.innerHTML = "";
-  
-    promptQuestion.innerHTML = questionsArray[2];
-  
-    button1.innerHTML = answersArray[2][0];
-    button2.innerHTML = answersArray[2][1];
-    button3.innerHTML = answersArray[2][2];
-    button4.innerHTML = answersArray[2][3];
-
-    correctAnswer = correctArray[2];
-
-    
-    
-  }
+//removes question from page
+//question.innerHTML = "";
 
 // COMPARE CLICKED STRING TO CORRECT STRING:
 
-
 //IF user clicks button,
-  // SHOW correct or wrong, and
+// SHOW correct or wrong, and
 
 // SHOW NEXT QUESTION
+
+answerOptions.addEventListener("click", function (event) {
+  if (event.target.textContent === correctAnswer) {
+    twoQuestion();
+    displayCorrect();
+  } else {
+    twoQuestion();
+    displayWrong();
+  }
+});
+
+function twoQuestion() {
+  startButton.innerHTML = "";
+  allDone.innerHTML = "";
+  displayScores.innerHTML = "";
+  welcome.innerHTML = "";
+
+  promptQuestion.innerHTML = questionsArray[1];
+
+  button1.innerHTML = answersArray[1][0];
+  button2.innerHTML = answersArray[1][1];
+  button3.innerHTML = answersArray[1][2];
+  button4.innerHTML = answersArray[1][3];
+
+  correctAnswer = correctArray[1];
+}
+
+answerOptions.addEventListener("click", function (event) {
+  if (event.target.textContent === correctAnswer) {
+    threeQuestion();
+    displayCorrect();
+  } else {
+    threeQuestion();
+    displayWrong();
+  }
+});
+
+function threeQuestion() {
+  startButton.innerHTML = "";
+  allDone.innerHTML = "";
+  displayScores.innerHTML = "";
+  welcome.innerHTML = "";
+
+  promptQuestion.innerHTML = questionsArray[2];
+
+  button1.innerHTML = answersArray[2][0];
+  button2.innerHTML = answersArray[2][1];
+  button3.innerHTML = answersArray[2][2];
+  button4.innerHTML = answersArray[2][3];
+
+  correctAnswer = correctArray[2];
+}
+
+answerOptions.addEventListener("click", function (event) {
+  if (event.target.textContent === correctAnswer) {
+    displayEnd();
+    displayCorrect();
+  } else {
+    displayEnd();
+    displayWrong();
+  }
+});
+
+//display last page
+
+function displayEnd() {}
 
 //display Correct! or Wrong! functions
 
 function displayCorrect() {
-    rightWrong.innerHTML ="<br><hr><br>Correct!";
-
+  rightWrong.innerHTML = "<br><hr><br>Correct!";
 }
 
 function displayWrong() {
-    rightWrong.innerHTML = "<br><hr><br>Wrong!";
+  rightWrong.innerHTML = "<br><hr><br>Wrong!";
 }
 
 //HOW TO SELECT DIFFERENT CORRECT ANSWERS FOR EACH QUESTION?
-//HOW TO TAKE FROM CORRECT ANSWERS ARRAY AND PUT INTO FUNCTION?
+
 //HOW TO LOOP ARRAY ITEMS IN FUNCTION
 
-// check to see if correct button was pressed:
-button3.addEventListener("click", displayCorrect);
+// // check to see if correct button was pressed:
+// button3.addEventListener("click", displayCorrect);
 
-//check to see if wrong button was pressed:
-button1.addEventListener("click", displayWrong);
-button2.addEventListener("click", displayWrong);
-button4.addEventListener("click", displayWrong);
+// //check to see if wrong button was pressed:
+// button1.addEventListener("click", displayWrong);
+// button2.addEventListener("click", displayWrong);
+// button4.addEventListener("click", displayWrong);
 
 //
 // - Display question prompt in h2
@@ -279,9 +279,14 @@ function wrong() {}
 function resetGame() {
   //resets timer
   timer = 120;
+
+  allDone.innerHTML = "";
+  displayScores.innerHTML = "";
+  
   //saves scores in local storage
   //setScore();
-  location.reload();
+
+  //location.reload();
 }
 
 // -- Display your scores
