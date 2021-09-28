@@ -140,19 +140,6 @@ function startGame() {
 
 //where do I put the four (?) indexes???
 
-// function displayQuestions () { 
-//     forEach(questionDisplay(arg1, arg2)) {
-
-//         display question
-//         display answers
-//         pick correct answer
-//         run again;
-
-
-//     }
-// };
-
-
 function oneQuestion() {
   startButton.innerHTML = "";
   allDone.innerHTML = "";
@@ -168,7 +155,7 @@ function oneQuestion() {
 
   correctAnswer = correctArray[0];
 
-  questionCounter++;
+  questionCounter = questionCounter++;
 
 }
 
@@ -190,7 +177,7 @@ function twoQuestion() {
   button4.innerHTML = answersArray[1][3];
 
   correctAnswer = correctArray[1];
-  questionCounter++;
+  questionCounter = questionCounter++;
   
 }
 
@@ -208,7 +195,7 @@ function threeQuestion() {
     button4.innerHTML = answersArray[2][3];
   
     correctAnswer = correctArray[2];
-    questionCounter++;
+    questionCounter = questionCounter++;
     
   }
 
