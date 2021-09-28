@@ -7,6 +7,8 @@
 
 var questionDisplay = 0; // index for displaying next question [?????]
 
+var correctAnswer = "";
+
 //need to loop over each of three arrays and put all of that into a function!
 
 // for(let i = 0; i < array.length; i++){
@@ -154,16 +156,15 @@ function oneQuestion() {
   displayScores.innerHTML = "";
   welcome.innerHTML = "";
 
-  promptQuestion.innerHTML = questionsArray[questionDisplay];
+  promptQuestion.innerHTML = questionsArray[0];
 
   button1.innerHTML = answersArray[0][0];
   button2.innerHTML = answersArray[0][1];
   button3.innerHTML = answersArray[0][2];
   button4.innerHTML = answersArray[0][3];
 
-  questionDisplay++;
   correctAnswer = correctArray[0];
-  
+
 }
 
 //removes question from page
