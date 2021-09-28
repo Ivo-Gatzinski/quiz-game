@@ -178,13 +178,13 @@ function oneQuestion() {
 // SHOW NEXT QUESTION
 
 answerOptions.addEventListener("click", function (event) {
-  if (event.target.textContent === correctAnswer) {
-    displayCorrect();
-  } else {
-    displayWrong();
-  } twoQuestion();
-});
-
+    if (event.target.textContent === correctAnswer) {
+      displayCorrect();
+    } else {
+      displayWrong();
+    } twoQuestion();
+  });
+  
 function twoQuestion() {
   startButton.innerHTML = "";
   allDone.innerHTML = "";
@@ -202,29 +202,31 @@ function twoQuestion() {
 }
 
 answerOptions.addEventListener("click", function (event) {
-  if (event.target.textContent === correctAnswer) {
-    displayCorrect();
-  } else {
-    displayWrong();
-  }
-  threeQuestion();
-});
+    if (event.target.textContent === correctAnswer) {
+      displayCorrect();
+    } else {
+      displayWrong();
+    }
+    threeQuestion();
+  });
 
 function threeQuestion() {
-  startButton.innerHTML = "";
-  allDone.innerHTML = "";
-  displayScores.innerHTML = "";
-  welcome.innerHTML = "";
+    startButton.innerHTML = "";
+    allDone.innerHTML = "";
+    displayScores.innerHTML = "";
+    welcome.innerHTML = "";
+  
+    promptQuestion.innerHTML = questionsArray[2];
+  
+    button1.innerHTML = answersArray[2][0];
+    button2.innerHTML = answersArray[2][1];
+    button3.innerHTML = answersArray[2][2];
+    button4.innerHTML = answersArray[2][3];
+  
+    correctAnswer = correctArray[2];
+  }
+  
 
-  promptQuestion.innerHTML = questionsArray[2];
-
-  button1.innerHTML = answersArray[2][0];
-  button2.innerHTML = answersArray[2][1];
-  button3.innerHTML = answersArray[2][2];
-  button4.innerHTML = answersArray[2][3];
-
-  correctAnswer = correctArray[2];
-}
 
 answerOptions.addEventListener("click", function (event) {
   if (event.target.textContent === correctAnswer) {
