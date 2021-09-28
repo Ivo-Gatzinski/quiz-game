@@ -201,9 +201,11 @@ function threeQuestion() {
 function showQuestion() {
   if (questionCounter = 0) {
     oneQuestion();
-  } else if (questionCounter = 1) {
+  };
+  if (questionCounter = 1) {
     twoQuestion();
-  } else if (questionCounter = 2) {
+  };
+  if (questionCounter = 2) {
     threeQuestion();
   }
 }
