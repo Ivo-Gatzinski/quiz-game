@@ -29,22 +29,27 @@ var initials = [];
 
 //data used to be all arrays, do NOT do that!
 var questionsArray = [
-    {
-prompt: "Commonly used data types do NOT include:",
-answers: ["strings", "boolean", "arrays", "numbers"],
-correct: "arrays",
-    },
   {
-prompt: "Arrays in JavaScript can be used to store:",
-answers: ["objects", "strings", "numbers", "all of the above"],
-correct:  "all of the above",
+    prompt: "Commonly used data types do NOT include:",
+    answers: ["strings", "boolean", "arrays", "numbers"],
+    correct: "arrays",
   },
   {
-prompt: "The condition in an if/else statement is enclosed with:",
-answers: ["curly braces", "parentheses", "square brackets", "quotation marks"],
-correct: "parentheses",
-},
-    ];
+    prompt: "Arrays in JavaScript can be used to store:",
+    answers: ["objects", "strings", "numbers", "all of the above"],
+    correct: "all of the above",
+  },
+  {
+    prompt: "The condition in an if/else statement is enclosed with:",
+    answers: [
+      "curly braces",
+      "parentheses",
+      "square brackets",
+      "quotation marks",
+    ],
+    correct: "parentheses",
+  },
+];
 
 function startTimer() {
   // starts timer
@@ -59,28 +64,31 @@ function startTimer() {
   }, 1000);
 }
 
-// EVENT ON LOAD PAGE: Display start page:
-
-
+// //show only start game button and welcome on first page:
 
 // function welcomePage() {
-//   //display all items on welcome page
-//  question.innerHTML = "";
-//  allDone.textContent = "";
-//  displayScores.innerHTML = "";
-// };
-
+//   question.innerHTML = "";
+//   allDone.textContent = "";
+//   displayScores.innerHTML = "";
+// }
 
 // start game function
 function startGame() {
   timerCount = 120;
   startButton.disabled = true;
+
   Question();
+
+  var classQuestion = document.querySelector(".question");
+  classQuestion.setAttribute("style", "display: contents;");
+
+  var allDone = document.querySelector(".all-done");
+  allDone.setAttribute("style", "display: contents;");
+
   startTimer();
 }
 
 function Question() {
-  
   startButton.innerHTML = "";
   allDone.innerHTML = "";
   displayScores.innerHTML = "";
@@ -98,27 +106,25 @@ function Question() {
 
 // CALL indexed QUESTION function +
 
-// COMPARE CLICKED STRING TO CORRECT STRING + 
+// COMPARE CLICKED STRING TO CORRECT STRING +
 
 //display correct! or wrong!
 
 answerOptions.addEventListener("click", function (event) {
-  
-    if (event.target.textContent === correctAnswer) {
-        displayCorrect();
-      } else {
-        displayWrong();
-      }
-
-    questionCounter = questionCounter + 1;
-
-    if (questionCounter < questionsArray.length) {
-      Question();
-    } else {
-      displayEnd();
-    }
+  if (event.target.textContent === correctAnswer) {
+    displayCorrect();
+  } else {
+    displayWrong();
   }
-  );
+
+  questionCounter = questionCounter + 1;
+
+  if (questionCounter < questionsArray.length) {
+    Question();
+  } else {
+    displayEnd();
+  }
+});
 
 //display last page
 
@@ -128,6 +134,7 @@ function displayEnd() {
   //display ENTER INITIALS
   //collect your score into scores ranking array
   //display rankings array
+  //do not display question
 }
 
 //display Correct! or Wrong! functions
@@ -149,7 +156,7 @@ function displayWrong() {
 function resetGame() {
   //resets timer
   timer = 120;
-
+  welcomePage();
   allDone.innerHTML = "";
   displayScores.innerHTML = "";
 
