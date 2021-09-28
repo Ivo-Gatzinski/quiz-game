@@ -161,9 +161,9 @@ function oneQuestion() {
   button3.innerHTML = answersArray[0][2];
   button4.innerHTML = answersArray[0][3];
 
-  correctAnswer = correctArray[0];
-
   questionDisplay++;
+  correctAnswer = correctArray[0];
+  
 }
 
 //removes question from page
@@ -240,7 +240,15 @@ answerOptions.addEventListener("click", function (event) {
 
 //display last page
 
-function displayEnd() {}
+function displayEnd() {
+
+    //display All Done
+    //display your score
+    //display ENTER INITIALS
+    //collect your score into scores ranking array
+    //display rankings array
+
+}
 
 //display Correct! or Wrong! functions
 
