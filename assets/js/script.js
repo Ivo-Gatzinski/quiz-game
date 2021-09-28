@@ -5,9 +5,32 @@
 
 //What containers do I need?
 
-var questionDisplay = 0;
+var questionDisplay = 0; // index for displaying next question [?????]
 
+//need to loop over each of three arrays and put all of that into a function!
 
+// for(let i = 0; i < array.length; i++){
+//     console.log(array[i].name);
+// }
+
+//?????
+
+// let str = '';
+
+// for (let i = 0; i < 9; i++) {
+//   str = str + i;
+// }
+
+// console.log(str);
+// // expected output: "012345678"
+
+//html >>>> DATA-STATE="HIDDEN" - 
+
+//CAN I DO THIS HOMEWORK WITH IF STATEMENTS ONLY?
+
+// for (i=0; i < questionDisplay; i++) {
+//     displayQuestion[i];
+// }
 
 var timer;
 var timerCount = 120;
@@ -34,7 +57,7 @@ var button4 = document.querySelector(".button-4");
 var score = 0;
 var initials = [];
 
-//DO ARRAYS NOT OBJECTS
+//DO ARRAYS NOT OBJECTS!
 
 //USE <OL> to add numbers
 
@@ -51,6 +74,8 @@ var answersArray = [
 ];
 
 var correctArray = ["arrays", "all of the above", "parentheses"];
+
+
 
 function startTimer() {
   // starts timer
@@ -106,6 +131,22 @@ function startGame() {
 //
 // - Display one question:
 // - USE FOR LOOP for next questions?
+// HOW DOES ***THIS*** WORK??
+
+//where do I put the four (?) indexes???
+
+// function displayQuestions () { 
+//     forEach(questionDisplay(arg1, arg2)) {
+
+//         display question
+//         display answers
+//         pick correct answer
+//         run again;
+
+
+//     }
+// };
+
 
 function oneQuestion() {
   startButton.innerHTML = "";
