@@ -1,3 +1,6 @@
+//Problem: How do I go to the third question?
+//I don't think I am asking the right question, or John thinks I am asking something else
+
 //how do I order the innerHTML = ""; commands
 //so that welcome page only shows welcome, but then it
 //disappears to show questions?
@@ -5,7 +8,7 @@
 
 //What containers do I need?
 
-var questionDisplay = 0; // index for displaying next question [?????]
+var questionCounter = 0; // index for displaying next question [?????]
 
 var correctAnswer = ""; //set initial value of correctAnswer [??????]
 
@@ -126,7 +129,7 @@ function startTimer() {
 function startGame() {
   timerCount = 120;
   startButton.disabled = true;
-  oneQuestion();
+  showQuestion();
   startTimer();
 }
 
@@ -165,25 +168,13 @@ function oneQuestion() {
 
   correctAnswer = correctArray[0];
 
+  questionCounter++;
+
 }
 
 //removes question from page
 //question.innerHTML = "";
 
-// COMPARE CLICKED STRING TO CORRECT STRING:
-
-//IF user clicks button,
-// SHOW correct or wrong, and
-
-// SHOW NEXT QUESTION
-
-answerOptions.addEventListener("click", function (event) {
-    if (event.target.textContent === correctAnswer) {
-      displayCorrect();
-    } else {
-      displayWrong();
-    } twoQuestion();
-  });
   
 function twoQuestion() {
   startButton.innerHTML = "";
@@ -199,16 +190,9 @@ function twoQuestion() {
   button4.innerHTML = answersArray[1][3];
 
   correctAnswer = correctArray[1];
+  questionCounter++;
+  
 }
-
-answerOptions.addEventListener("click", function (event) {
-    if (event.target.textContent === correctAnswer) {
-      displayCorrect();
-    } else {
-      displayWrong();
-    }
-    threeQuestion();
-  });
 
 function threeQuestion() {
     startButton.innerHTML = "";
@@ -224,19 +208,42 @@ function threeQuestion() {
     button4.innerHTML = answersArray[2][3];
   
     correctAnswer = correctArray[2];
+    questionCounter++;
+    
   }
-  
+
+// COMPARE CLICKED STRING TO CORRECT STRING:
+
+//IF user clicks button,
+// SHOW correct or wrong, and
+
+// SHOW NEXT QUESTION
 
 
-answerOptions.addEventListener("click", function (event) {
-  if (event.target.textContent === correctAnswer) {
-    displayEnd();
-    displayCorrect();
-  } else {
-    displayEnd();
-    displayWrong();
-  }
-});
+function showQuestion() 
+{
+    
+    if (questionCounter=0) {
+        oneQuestion();
+    } else if (questionCounter=1) {
+        twoQuestion();
+    } else if (questionCounter=2) {
+        threeQuestion();
+    };
+    }
+
+    answerOptions.addEventListener("click", function (event) {
+        if (event.target.textContent === correctAnswer) {
+          displayCorrect();
+        } else {
+          displayWrong();
+        }
+    }
+    );    
+
+
+
+
 
 //display last page
 
