@@ -29,7 +29,7 @@ var correctAnswer = ""; //set initial value of correctAnswer [??????]
 // console.log(str);
 // // expected output: "012345678"
 
-//html >>>> DATA-STATE="HIDDEN" - 
+//html >>>> DATA-STATE="HIDDEN" -
 
 //CAN I DO THIS HOMEWORK WITH IF STATEMENTS ONLY?
 
@@ -79,8 +79,6 @@ var answersArray = [
 ];
 
 var correctArray = ["arrays", "all of the above", "parentheses"];
-
-
 
 function startTimer() {
   // starts timer
@@ -156,13 +154,11 @@ function oneQuestion() {
   correctAnswer = correctArray[0];
 
   questionCounter = questionCounter++;
-
 }
 
 //removes question from page
 //question.innerHTML = "";
 
-  
 function twoQuestion() {
   startButton.innerHTML = "";
   allDone.innerHTML = "";
@@ -178,26 +174,24 @@ function twoQuestion() {
 
   correctAnswer = correctArray[1];
   questionCounter = questionCounter++;
-  
 }
 
 function threeQuestion() {
-    startButton.innerHTML = "";
-    allDone.innerHTML = "";
-    displayScores.innerHTML = "";
-    welcome.innerHTML = "";
-  
-    promptQuestion.innerHTML = questionsArray[2];
-  
-    button1.innerHTML = answersArray[2][0];
-    button2.innerHTML = answersArray[2][1];
-    button3.innerHTML = answersArray[2][2];
-    button4.innerHTML = answersArray[2][3];
-  
-    correctAnswer = correctArray[2];
-    questionCounter = questionCounter++;
-    
-  }
+  startButton.innerHTML = "";
+  allDone.innerHTML = "";
+  displayScores.innerHTML = "";
+  welcome.innerHTML = "";
+
+  promptQuestion.innerHTML = questionsArray[2];
+
+  button1.innerHTML = answersArray[2][0];
+  button2.innerHTML = answersArray[2][1];
+  button3.innerHTML = answersArray[2][2];
+  button4.innerHTML = answersArray[2][3];
+
+  correctAnswer = correctArray[2];
+  questionCounter = questionCounter++;
+}
 
 // COMPARE CLICKED STRING TO CORRECT STRING:
 
@@ -206,42 +200,32 @@ function threeQuestion() {
 
 // SHOW NEXT QUESTION
 
+function showQuestion() {
+  if ((questionCounter = 0)) {
+    oneQuestion();
+  } else if ((questionCounter = 1)) {
+    twoQuestion();
+  } else if ((questionCounter = 2)) {
+    threeQuestion();
+  }
+}
 
-function showQuestion() 
-{
-    
-    if (questionCounter=0) {
-        oneQuestion();
-    } else if (questionCounter=1) {
-        twoQuestion();
-    } else if (questionCounter=2) {
-        threeQuestion();
-    };
-    }
-
-    answerOptions.addEventListener("click", function (event) {
-        if (event.target.textContent === correctAnswer) {
-          displayCorrect();
-        } else {
-          displayWrong();
-        }
-    }
-    );    
-
-
-
-
+answerOptions.addEventListener("click", function (event) {
+  if (event.target.textContent === correctAnswer) {
+    displayCorrect();
+  } else {
+    displayWrong();
+  }
+});
 
 //display last page
 
 function displayEnd() {
-
-    //display All Done
-    //display your score
-    //display ENTER INITIALS
-    //collect your score into scores ranking array
-    //display rankings array
-
+  //display All Done
+  //display your score
+  //display ENTER INITIALS
+  //collect your score into scores ranking array
+  //display rankings array
 }
 
 //display Correct! or Wrong! functions
@@ -327,7 +311,7 @@ function resetGame() {
 
   allDone.innerHTML = "";
   displayScores.innerHTML = "";
-  
+
   //saves scores in local storage
   //setScore();
 
