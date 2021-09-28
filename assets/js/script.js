@@ -7,7 +7,7 @@
 
 var questionDisplay = 0; // index for displaying next question [?????]
 
-var correctAnswer = "";
+var correctAnswer = ""; //set initial value of correctAnswer [??????]
 
 //need to loop over each of three arrays and put all of that into a function!
 
@@ -179,12 +179,10 @@ function oneQuestion() {
 
 answerOptions.addEventListener("click", function (event) {
   if (event.target.textContent === correctAnswer) {
-    twoQuestion();
     displayCorrect();
   } else {
-    twoQuestion();
     displayWrong();
-  }
+  } twoQuestion();
 });
 
 function twoQuestion() {
@@ -205,12 +203,11 @@ function twoQuestion() {
 
 answerOptions.addEventListener("click", function (event) {
   if (event.target.textContent === correctAnswer) {
-    threeQuestion();
     displayCorrect();
   } else {
-    threeQuestion();
     displayWrong();
   }
+  threeQuestion();
 });
 
 function threeQuestion() {
