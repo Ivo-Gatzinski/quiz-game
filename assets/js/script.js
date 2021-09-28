@@ -154,7 +154,7 @@ function oneQuestion() {
   displayScores.innerHTML = "";
   welcome.innerHTML = "";
 
-  promptQuestion.innerHTML = questionsArray[0];
+  promptQuestion.innerHTML = questionsArray[questionDisplay];
 
   button1.innerHTML = answersArray[0][0];
   button2.innerHTML = answersArray[0][1];
@@ -162,6 +162,8 @@ function oneQuestion() {
   button4.innerHTML = answersArray[0][3];
 
   correctAnswer = correctArray[0];
+
+  questionDisplay++;
 }
 
 //removes question from page
