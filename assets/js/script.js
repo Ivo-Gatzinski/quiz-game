@@ -24,7 +24,7 @@ var button2 = document.querySelector(".button-2");
 var button3 = document.querySelector(".button-3");
 var button4 = document.querySelector(".button-4");
 
-var score = 0;
+var score = 120;
 var initials = [];
 
 //data used to be all arrays, do NOT do that!
@@ -52,27 +52,18 @@ var questionsArray = [
 ];
 
 function startTimer() {
-  // starts timer
+  
   timer = setInterval(function () {
     timerCount--;
     timerElement.innerHTML = "Time: " + timerCount;
-    // Tests if time has run out
+    
     if (timerCount <= 0) {
-      // Clears interval
+      
       clearInterval(timer);
     }
   }, 1000);
 }
 
-// //show only start game button and welcome on first page:
-
-// function welcomePage() {
-//   question.innerHTML = "";
-//   allDone.textContent = "";
-//   displayScores.innerHTML = "";
-// }
-
-// start game function
 function startGame() {
   timerCount = 120;
   startButton.disabled = true;
@@ -81,9 +72,6 @@ function startGame() {
 
   var classQuestion = document.querySelector(".question");
   classQuestion.setAttribute("style", "display: contents;");
-
-  var allDone = document.querySelector(".all-done");
-  allDone.setAttribute("style", "display: contents;");
 
   startTimer();
 }
@@ -115,6 +103,7 @@ answerOptions.addEventListener("click", function (event) {
     displayCorrect();
   } else {
     displayWrong();
+    score = timerCount - 30;
   }
 
   questionCounter = questionCounter + 1;
@@ -123,18 +112,31 @@ answerOptions.addEventListener("click", function (event) {
     Question();
   } else {
     displayEnd();
+    localStorage.setItem('score', score);
   }
 });
 
 //display last page
 
+// -- WHEN no more questions left in array of questions:
+//
+// -- show "All Done" Page
+// -- Append YOUR scores into an array of high scores
+
 function displayEnd() {
-  //display All Done
-  //display your score
-  //display ENTER INITIALS
+  
+  welcome.innerHTML = "";
+  question.innerHTML = "";
+
+  clearInterval(timer);
+
+ allDone.setAttribute("style", "display: contents;");
+ goBack.setAttribute("style", "display: contents;");
+ displayScores.setAttribute("style", "display: contents;");
+
   //collect your score into scores ranking array
   //display rankings array
-  //do not display question
+  
 }
 
 //display Correct! or Wrong! functions
@@ -146,11 +148,6 @@ function displayCorrect() {
 function displayWrong() {
   rightWrong.innerHTML = "<br><hr><br>Wrong!";
 }
-
-// -- WHEN no more questions left in array of questions:
-//
-// -- show "All Done" Page
-// -- Append YOUR scores into an array of high scores
 
 //reset game
 function resetGame() {
