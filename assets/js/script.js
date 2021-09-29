@@ -71,7 +71,7 @@ function startGame() {
   Question();
 
   var classQuestion = document.querySelector(".question");
-  classQuestion.setAttribute("style", "display: contents;");
+  classQuestion.setAttribute("style", "display: block;");
 
   startTimer();
 }
@@ -125,18 +125,18 @@ answerOptions.addEventListener("click", function (event) {
 
 function displayEnd() {
   
-  welcome.innerHTML = "";
-  question.innerHTML = "";
+  welcome.style.display = "none";
+  question.style.display = "none";
 
   clearInterval(timer);
 
- allDone.setAttribute("style", "display: contents;");
- goBack.setAttribute("style", "display: contents;");
- displayScores.setAttribute("style", "display: contents;");
+ allDone.style.display = "block";
+ goBack.style.display = "block";
+ displayScores.style.display = "block";
 
-var showScore = document.querySelector(".your-score");
+//var showScore = document.querySelector(".your-score");
 
-showScore.innerHTML = score.toString();
+//showScore.textContent = score;
 
   //collect your score into scores ranking array
   //display rankings array
@@ -160,31 +160,10 @@ function resetGame() {
   welcomePage();
   allDone.innerHTML = "";
   displayScores.innerHTML = "";
-
-  //saves scores in local storage
-  //setScore();
-
-  //location.reload();
 }
 
-// -- Display your scores
-// -- Display INITIALS FORM
-// -- Collect INITIALs and SCORES into Local Storage
-// -- display GO BACK and CLEAR HIGH SCORES button
-
-//where exactly to put init() function?
-
-//init();
-//welcomePage();
-
-//EVENT ON CLICK START BUTTON:
 
 startButton.addEventListener("click", startGame);
 
-// -- IF player clicks go back button, reset game
-
-// -- IF player clicks GO BACK, then DISPLAY WELCOME PAGE
 
 goBack.addEventListener("click", resetGame);
-
-// -- IF player clicks CLEAR SCORES, then erase scores in ARRAY
