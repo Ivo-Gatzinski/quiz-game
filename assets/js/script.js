@@ -24,7 +24,7 @@ var button2 = document.querySelector(".button-2");
 var button3 = document.querySelector(".button-3");
 var button4 = document.querySelector(".button-4");
 
-var score = 120;
+var score = 0;
 var initials = [];
 
 //data used to be all arrays, do NOT do that!
@@ -51,19 +51,6 @@ var questionsArray = [
   },
 ];
 
-function startTimer() {
-  
-  timer = setInterval(function () {
-    timerCount--;
-    timerElement.innerHTML = "Time: " + timerCount;
-    
-    if (timerCount <= 0) {
-      
-      clearInterval(timer);
-    }
-  }, 1000);
-}
-
 function startGame() {
   timerCount = 120;
   startButton.disabled = true;
@@ -77,10 +64,10 @@ function startGame() {
 }
 
 function Question() {
-  startButton.innerHTML = "";
-  allDone.innerHTML = "";
-  displayScores.innerHTML = "";
-  welcome.innerHTML = "";
+  startButton.style.display = "none";
+  allDone.style.display = "none";
+  displayScores.style.display = "none";
+  welcome.style.display = "none";
 
   promptQuestion.innerHTML = questionsArray[questionCounter].prompt;
 
@@ -91,6 +78,20 @@ function Question() {
 
   correctAnswer = questionsArray[questionCounter].correct;
 }
+
+function startTimer() {
+  
+    timer = setInterval(function () {
+      timerCount--;
+      timerElement.innerHTML = "Time: " + timerCount;
+      
+      if (timerCount <= 0) {
+        
+        clearInterval(timer);
+      }
+    }, 1000);
+  }
+  
 
 // CALL indexed QUESTION function +
 
@@ -104,6 +105,7 @@ answerOptions.addEventListener("click", function (event) {
   } else {
     displayWrong();
     score = timerCount - 30;
+    timerElement.innerHTML = "Time:" + score;
   }
 
   questionCounter = questionCounter + 1;
@@ -134,6 +136,10 @@ function displayEnd() {
  goBack.style.display = "block";
  displayScores.style.display = "block";
 
+ yourScore = document.querySelector(".your-score");
+
+ yourScore.innerHTML = "<p>" + "Your Score is: <br>" + score.toString() + "</p>";
+
 //var showScore = document.querySelector(".your-score");
 
 //showScore.textContent = score;
@@ -158,8 +164,6 @@ function resetGame() {
   //resets timer
   timer = 120;
   welcomePage();
-  allDone.innerHTML = "";
-  displayScores.innerHTML = "";
 }
 
 
