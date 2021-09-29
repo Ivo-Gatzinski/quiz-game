@@ -63,6 +63,20 @@ function startGame() {
   startTimer();
 }
 
+//reset game
+function resetGame() {
+    //resets timer
+    timerCount = 120;
+    timerElement.innerHTML = "Time: " + timerCount;
+    
+    allDone.style.display = "none";
+    displayScores.style.display = "none";
+  
+    welcome.style.display = "block";
+    startButton.style.display = "block";
+    
+  }
+
 function Question() {
   startButton.style.display = "none";
   allDone.style.display = "none";
@@ -157,13 +171,6 @@ function displayCorrect() {
 
 function displayWrong() {
   rightWrong.innerHTML = "<br><hr><br>Wrong!";
-}
-
-//reset game
-function resetGame() {
-  //resets timer
-  timer = 120;
-  welcomePage();
 }
 
 
