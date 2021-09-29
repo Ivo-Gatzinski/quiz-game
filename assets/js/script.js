@@ -134,6 +134,10 @@ function displayEnd() {
  goBack.setAttribute("style", "display: contents;");
  displayScores.setAttribute("style", "display: contents;");
 
+var showScore = document.querySelector(".your-score");
+
+showScore.innerHTML = score.toString();
+
   //collect your score into scores ranking array
   //display rankings array
   
